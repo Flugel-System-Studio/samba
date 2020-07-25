@@ -11,9 +11,27 @@ FROM alpine:3.12.0
 # Label
 # 
 # ###########################################################
-LABEL maintainer= "akihiro.toda <akihiro.toda.fss@gmail.com>"
+LABEL maintainer="akihiro.toda <akihiro.toda.fss@gmail.com>"
 LABEL description="Samba docker container, based on Alpone Linux."
-LABEL version="0.1"
+LABEL version="1.0"
+
+# ###########################################################
+# 
+# ディレクトリ作成
+# 
+# ###########################################################
+RUN mkdir /mnt/private
+RUN mkdir /mnt/public
+RUN mkdir /mnt/business
+
+# ###########################################################
+# 
+# ファイルコピー
+# 
+# ###########################################################
+COPY ./config/smb.conf /etc/samba/
+COPY ./config/account.conf /usr/local/bin/account.conf
+COPY ./start_samba.sh /usr/local/bin/start_samba.sh
 
 # ###########################################################
 # 

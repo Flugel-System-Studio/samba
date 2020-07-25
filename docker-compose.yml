@@ -4,10 +4,9 @@ services:
     build: .
     container_name: samba
     volumes:
-      - ./config/smb.conf:/etc/samba/smb.conf
-      - ./business:/business
-      - ./public:./public
-      - ./private:/praivate
+      - ./storage/business:/mnt/business
+      - ./storage/public:/mnt/public
+      - ./storage/private:/mnt/private
     ports:
       - "137:137/udp"
       - "138:138/udp"

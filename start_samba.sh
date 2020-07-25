@@ -1,5 +1,5 @@
 #!/bin/ash
-. ./config/account.conf
+. account.conf
 
 # Create an account
 adduser -D $USERNAME
