@@ -1,3 +1,4 @@
-storage/business/
-storage/private/
-storage/public/
+storage/business/*
+storage/private/*
+storage/public/*
+!.gitignore
